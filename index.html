@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Coke — The Crisp Hit</title>
+  <meta name="description" content="Experience the iconic crispness of Diet Coke. Explore the immersive, scroll-driven fluid animation, zero-calorie refreshment, and our premium flavor matrix.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="Diet Coke — The Crisp Hit">
+  <meta property="og:description" content="Experience the iconic crispness of Diet Coke with a stunning 3D scroll-animation.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts & Material Symbols from User Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e2e2e2",
+            "secondary-fixed-dim": "#c5c7c8",
+            "on-tertiary-container": "#fcfcfc",
+            "on-background": "#1a1c1c",
+            "primary-fixed-dim": "#ffb4a9",
+            "tertiary": "#5c5c5c",
+            "primary-fixed": "#ffdad5",
+            "on-primary-container": "#fffbff",
+            "inverse-on-surface": "#f0f1f1",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#747474",
+            "secondary": "#5c5f60",
+            "background": "#f9f9f9",
+            "on-primary-fixed-variant": "#930003",
+            "on-surface": "#1a1c1c",
+            "tertiary-fixed": "#e2e2e2",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#410000",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#f9f9f9",
+            "secondary-container": "#e1e3e4",
+            "primary-container": "#ea0008",
+            "on-secondary-fixed-variant": "#444748",
+            "surface-container": "#eeeeee",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#191c1d",
+            "surface-container-high": "#e8e8e8",
+            "on-surface-variant": "#5f3e3a",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f3f3f4",
+            "primary": "#bc0005",
+            "on-secondary-container": "#626566",
+            "outline": "#956e68",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "on-tertiary-fixed-variant": "#474747",
+            "surface-bright": "#f9f9f9",
+            "error": "#ba1a1a",
+            "surface-dim": "#dadada",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#e1e3e4",
+            "on-tertiary-fixed": "#1b1b1b",
+            "outline-variant": "#eabcb5",
+            "inverse-surface": "#2f3131",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2e2",
+            "inverse-primary": "#ffb4a9",
+            "surface-tint": "#c00005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "container-max-width": "1440px",
+            "unit": "4px",
+            "margin-mobile": "20px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "body-md": ["Hanken Grotesk"],
+            "headline-md": ["Anybody"],
+            "headline-lg": ["Anybody"],
+            "body-lg": ["Hanken Grotesk"],
+            "label-caps": ["Space Mono"],
+            "display-xl": ["Anybody"],
+            "headline-lg-mobile": ["Anybody"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "display-xl": ["80px", { "lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden min-h-screen flex flex-col relative selection:bg-primary selection:text-on-primary">
+  
+  <!-- Brutalist Film Grain Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Preloader Screen (Dynamic Liquid Progress Bar) -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <span class="diet-badge">DIET</span>
+        <h2 class="preloader-logo-text">Coke</h2>
+      </div>
+      <div class="liquid-loader-container">
+        <div id="liquid-fill" class="liquid-fill"></div>
+        <span id="loader-percent" class="loader-percent">0%</span>
+      </div>
+      <p class="loader-status">Chilling the experience...</p>
+    </div>
+  </div>
+
+  <!-- Premium Glassmorphic Header Navigation -->
+  <header id="main-header" class="header-nav">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="logo-link">
+        <span class="brand-diet">DIET</span>
+        <span class="brand-coke">Coke</span>
+      </a>
+      <nav class="nav-links" id="desktop-nav">
+        <a href="#" class="nav-item active" data-scroll-to="0">The Refreshment</a>
+        <a href="#" class="nav-item" data-scroll-to="0.35">The Splash</a>
+        <a href="#" class="nav-item" data-scroll-to="0.95">The Can</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-primary" id="btn-buy-now">
+          <span>BUY NOW</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Canvas Scroll Animation Section (Hero Component) -->
+  <section id="animation-section" class="scroll-track">
+    <div class="sticky-container">
+      <canvas id="scroll-canvas"></canvas>
+      
+      <!-- Sticky Glowing Background Accents -->
+      <div class="glowing-accent red-glow" id="accent-red"></div>
+      <div class="glowing-accent silver-glow" id="accent-silver"></div>
+      
+      <!-- Sticky Hero Text Overlay from User's Brutalist Design -->
+      <div id="brutalist-hero-overlay" class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-gutter transition-all duration-300 pointer-events-auto">
+        <div class="max-w-4xl mx-auto flex flex-col items-center mt-20 md:mt-0">
+          <h1 class="font-display-xl text-display-xl md:text-[120px] md:leading-[110px] font-black uppercase text-on-background drop-shadow-[0_4px_0_rgba(26,28,28,1)] mb-6 tracking-tighter">
+            THE CRISP HIT
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-background bg-surface-container-lowest/80 backdrop-blur-sm px-6 py-2 border-2 border-on-background mb-10 max-w-xl font-bold">
+            Unapologetically refreshing. Zero sugar. All vibes.
+          </p>
+          <button class="brutalist-button bg-primary text-on-primary font-label-caps text-label-caps text-lg px-10 py-5 uppercase tracking-widest hover:bg-surface-variant hover:text-primary transition-colors" id="hero-cta-btn">
+            Taste the Pulse
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Website Body Content (User Brutalist Sections) -->
+  <main class="flex-grow">
+    
+    <!-- Social Proof Ticker Marquee -->
+    <div class="ticker-wrap py-4 my-16 md:my-24">
+      <div class="ticker">
+        <div class="ticker__item">ZERO SUGAR</div>
+        <div class="ticker__item">•</div>
+        <div class="ticker__item">MAX REFRESH</div>
+        <div class="ticker__item">•</div>
+        <div class="ticker__item">ALWAYS CRISP</div>
+        <div class="ticker__item">•</div>
+        <div class="ticker__item">ZERO SUGAR</div>
+        <div class="ticker__item">•</div>
+        <div class="ticker__item">MAX REFRESH</div>
+        <div class="ticker__item">•</div>
+        <div class="ticker__item">ALWAYS CRISP</div>
+        <div class="ticker__item">•</div>
+      </div>
+    </div>
+
+    <!-- Flavor Matrix Section -->
+    <section class="max-w-container-max-width mx-auto px-gutter py-16 md:py-32">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 border-b-2 border-on-background pb-8">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg font-black uppercase tracking-tighter text-on-background">
+            The Flavor Matrix
+          </h2>
+          <p class="font-body-md text-body-md text-secondary mt-2 max-w-md">
+            Choose your frequency. Same crisp hit, different wavelength.
+          </p>
+        </div>
+        <a class="font-label-caps text-label-caps text-primary hover:underline underline-offset-4 decoration-2" href="#">Explore All Flavors →</a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 asymmetric-grid">
+        <!-- Flavor Card 1 - Classic OG -->
+        <div class="brutalist-card bg-surface-container-lowest overflow-hidden group hover:bg-surface-container transition-colors relative cursor-pointer">
+          <div class="h-64 bg-surface-variant relative border-b-2 border-on-background overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center text-on-background font-headline-md opacity-20 group-hover:scale-110 transition-transform duration-500">CLASSIC</div>
+            <img alt="Diet Coke Classic" class="w-full h-full object-contain p-8 relative z-10 group-hover:rotate-3 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMdiORse6A_vB5LzoWs_bPYtNzn_GKsO0SZxI5dESOrSqXGHV1J75QegCei_ve4w4V1W926GfTbOH8douD3lzT-bfKQ6YqSSP5jHin_T8Bsu6s9_NPNxGvL8HKtElwPjxCU1AxwsXufRAH1HOTdhoE9WBEXreJZpHf6xVRotlEDfMeX7gH4WSdGuouIZL62fgOQf3UmZNQni9U-F5OlTsflCscFTNw2ricDkAj2IpGNLLRF3pA5zzVlKLdlF7rQQaieE171kfqj-Y"/>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-headline-md text-headline-md font-black uppercase">Classic</h3>
+              <span class="font-label-caps text-label-caps bg-primary text-on-primary px-2 py-1 border border-on-background">OG</span>
+            </div>
+            <p class="font-body-md text-body-md text-secondary mb-6">The unapologetic original. Pure, crisp refreshment with zero compromises.</p>
+            <button class="brutalist-button w-full bg-on-background text-on-primary font-label-caps text-label-caps py-3 uppercase hover:bg-surface-variant hover:text-on-background transition-colors">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        
+        <!-- Flavor Card 2 - Lime -->
+        <div class="brutalist-card bg-surface-container-lowest overflow-hidden group hover:bg-surface-container transition-colors relative cursor-pointer md:mt-16">
+          <div class="h-64 bg-[#E8F5E9] relative border-b-2 border-on-background overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center text-[#2E7D32] font-headline-md opacity-20 group-hover:scale-110 transition-transform duration-500">LIME</div>
+            <img alt="Diet Coke Lime" class="w-full h-full object-contain p-8 relative z-10 group-hover:rotate-3 transition-transform duration-300 filter hue-rotate-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARSyPfnJ9mkvFxEgCW2Uq6gR8Plx4Cuzwo3Q13dU3Ab7mRYVCbTLVRLZHjMDiXV0jJqtBoP4XIOEniCKKiP3tc_C-dOeADzigj20wWygNIVFhtc6YjGCt2QMO5FKCrUEt9Zht5_42I-Dq-c_y55po1i40s_jRHKDd8Dut8_2SDXv0m_Rxy_zqdgQ1V0aRTBl0xRkNaDv4gC5Ye2L9ePhxpStmgSoNL0vbhvN_-hcYD4ZAM8BzNWPv0UVFhBXRwuUUIK3kmBo1kFlE"/>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-headline-md text-headline-md font-black uppercase">Sublime Lime</h3>
+              <span class="font-label-caps text-label-caps bg-on-background text-on-primary px-2 py-1 border border-on-background">Zesty</span>
+            </div>
+            <p class="font-body-md text-body-md text-secondary mb-6">A sharp, citrus twist cuts through the classic crispness. High voltage refreshment.</p>
+            <button class="brutalist-button w-full bg-transparent text-on-background border-2 border-on-background font-label-caps text-label-caps py-3 uppercase hover:bg-on-background hover:text-on-primary transition-colors">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        
+        <!-- Flavor Card 3 - Cherry -->
+        <div class="brutalist-card bg-surface-container-lowest overflow-hidden group hover:bg-surface-container transition-colors relative cursor-pointer">
+          <div class="h-64 bg-[#FFEBEE] relative border-b-2 border-on-background overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center text-[#C62828] font-headline-md opacity-20 group-hover:scale-110 transition-transform duration-500">CHERRY</div>
+            <img alt="Diet Coke Cherry" class="w-full h-full object-contain p-8 relative z-10 group-hover:rotate-3 transition-transform duration-300 filter hue-rotate-[330deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS0w6UbF1jIW53-H2fGSgbD6oZHsyOvGk-2_Pcw2JbZmH_uakV9KIyFwQZxksFW31QtAUBtpSV1Y8KZ3kIoX1DjZVWRigZE7uFBx7CSCEztTC0FcxSVpYBcpHfc5G_d3PNEoGKxC09rhqMr5rDfCKYWluUn5a8slTtMARU2FmXutOy-oI-O9JE8neHpD7P-NT4g_pWdgFZ6TbqlHo-SOrlx-cKUgIgl-pjNFBAfLsomusons1XWnZ4Xuoi8qGuQ-DuzuAtKCkmI-0"/>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-headline-md text-headline-md font-black uppercase">Cherry Hit</h3>
+              <span class="font-label-caps text-label-caps bg-on-background text-on-primary px-2 py-1 border border-on-background">Sweet</span>
+            </div>
+            <p class="font-body-md text-body-md text-secondary mb-6">Bold cherry notes crash into zero sugar crispness. For those who want it louder.</p>
+            <button class="brutalist-button w-full bg-transparent text-on-background border-2 border-on-background font-label-caps text-label-caps py-3 uppercase hover:bg-on-background hover:text-on-primary transition-colors">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifestyle Bento Layout Grid -->
+    <section class="bg-surface-container-high border-t-2 border-b-2 border-on-background py-24">
+      <div class="max-w-container-max-width mx-auto px-gutter">
+        <div class="text-center mb-16">
+          <h2 class="font-headline-lg text-headline-lg font-black uppercase tracking-tighter text-on-background">
+            Refresh Your Feed
+          </h2>
+          <p class="font-label-caps text-label-caps mt-4 text-primary tracking-widest">#TheCrispHit</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:grid-rows-2 h-auto md:h-[600px]">
+          <!-- Large Feature Image -->
+          <div class="brutalist-card col-span-1 md:col-span-2 md:row-span-2 relative overflow-hidden group">
+            <img alt="Lifestyle shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZKovE7iLMxq-fEZk2nAyTMsTGrdAczQlVrCk3r3LidlAtO810HqUdoEPPoKg9wc_lubJbd6UwrfuWZQRJX-zrzaNUPSH3kAOYj6ueE5jMTFkASM3NJFSkrXEzGEdkjeaDp-SKxFnXfAG78qXurzVVvzG45mXdKDqlmX3u0xz0mdytuJ8SecgPm33AqPl5ofdkK9cnrT9286hckxmmOOnzI6L4rBYkXNtFig94q7pr8VEdbq4ey0z7UpQcO60KoqxPc5BTQjklfZE"/>
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-on-background text-on-primary font-label-caps px-3 py-1 border border-on-background">STREET</span>
+            </div>
+          </div>
+          
+          <!-- Top Right Text Block -->
+          <div class="brutalist-card col-span-1 md:col-span-2 relative overflow-hidden bg-primary flex items-center justify-center p-8 group">
+            <div class="relative z-10 text-center">
+              <p class="font-headline-md text-headline-md font-black text-on-primary uppercase mb-2 group-hover:scale-105 transition-transform">
+                Break the algorithm.
+              </p>
+              <p class="font-body-md text-on-primary/80">Stay crisp.</p>
+            </div>
+            <div class="absolute -right-10 -bottom-10 opacity-20 rotate-12 group-hover:rotate-0 transition-transform duration-700">
+              <span class="material-symbols-outlined text-[150px] text-on-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+            </div>
+          </div>
+          
+          <!-- Bottom Right Image -->
+          <div class="brutalist-card col-span-1 relative overflow-hidden group">
+            <img alt="Cracking open a can" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA56-cSC0Mfc19ioLvLWk8Gduf0ID1Jivn7hUFM7LznE1l6NQS6QUNk--nsVR3FjeZAwNhF5NpPNKt1NRYi8xDctqxhc65ibQrQc_LBqdiTRO-8UlxQSMxzf1ynjJg1FFmn3wToWFZIctKm1eMMASPqWowBki_9L7nFslvZQmW3vwliCTHYGT9rSSULB-COmxBzx0ZMQRA_ZEjlyjyZ8gAtCJ9LOS4KZZe3Df1QYGXQ_TpXOxdyI78ojAJkr1iSM3lSPgSiru4L2tg"/>
+          </div>
+          
+          <!-- Bottom Right Calories Feature -->
+          <div class="brutalist-card col-span-1 relative overflow-hidden bg-surface-container-lowest flex flex-col justify-between p-6">
+            <span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+            <div>
+              <h4 class="font-label-caps text-label-caps font-bold uppercase mb-2 text-on-background">Zero Calories</h4>
+              <p class="font-body-md text-sm text-secondary">All the attitude. None of the sugar. Keep your momentum going.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Component (User Design) -->
+  <footer class="w-full border-t-2 border-on-background bg-on-background dark:bg-surface-container-lowest flex flex-col md:flex-row justify-between items-start gap-8 px-gutter py-20 max-w-container-max-width mx-auto">
+    <div class="font-headline-lg text-headline-lg font-black text-surface hover:italic transition-all active:scale-95 duration-100 cursor-pointer">
+      DIET COKE
+    </div>
+    <div class="flex flex-col md:flex-row gap-8 font-body-md text-body-md">
+      <div class="flex flex-col gap-4">
+        <a class="text-surface-variant dark:text-secondary hover:italic transition-all" href="#">Instagram</a>
+        <a class="text-surface-variant dark:text-secondary hover:italic transition-all" href="#">TikTok</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a class="text-surface-variant dark:text-secondary hover:italic transition-all" href="#">Privacy</a>
+        <a class="text-surface-variant dark:text-secondary hover:italic transition-all" href="#">Terms</a>
+      </div>
+    </div>
+    <div class="font-body-md text-body-md text-surface-variant dark:text-secondary mt-8 md:mt-0">
+      ©2024 DIET COKE. UNAPOLOGETICALLY CRISP.
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
